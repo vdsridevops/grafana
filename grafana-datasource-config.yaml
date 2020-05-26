@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: default
+data:
+  opentsdb.yaml: |-
+    {
+        "apiVersion": 1,
+        "datasources": [
+            {
+               "access":"proxy",
+               "editable": true,
+               "name": "opentsdb",
+               "orgId": 1,
+               "type": "opentsdb",
+               "url": "http://opentsdb:4242",
+               "version": 1
+            }
+        ]
+    }
